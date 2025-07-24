@@ -6,12 +6,26 @@
 }
 
 :root {
+  --text-color: #21243d;
   --font-color: #000;
   --background-color: #fff;
   --primary-color: #ff6464;
+  --priamry-color-b: #fc5e4c;
 }
 
 body {
   background-color: var(--background-color);
   min-height: 100vh;
+}
+
+section > div.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+@media screen and (max-width: 880px) {
+  section > div.container {
+    max-width: 90%;
+  }
 }

@@ -11,7 +11,7 @@ nav {
 
 header > nav > a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: right;
   color: var(--font-color);
@@ -27,26 +27,33 @@ header > nav > a.menu-icon {
 }
 
 @media screen and (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    align-items: start;
+  header {
     position: relative;
   }
 
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   header > nav > a {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0; /* initial padding must be 0 */
   }
 
   header > nav > a.menu-icon {
     display: inline;
+    font-size: 2rem;
+    font-weight: 200;
     position: absolute;
-    top: 0;
-    right: 0px;
+    top: 10px;
+    right: 10px;
   }
-}
 
-@media screen and (max-width: 480px) {
-  nav > a.show:not(a.menu-icon.show) {
-    display: inline-block;
+  nav > a.show:not(.menu-icon) {
+    max-height: 100px;
+    padding: 10px 0;
   }
 }
